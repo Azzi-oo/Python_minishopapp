@@ -23,3 +23,6 @@ class Post(UserRelationMixin, Base):
         default="",
         server_default="",
     )
+
+    def __str__(self):
+        return f"{self.__class__.__name__}(id={self.id}, username={self.title!r}, user_id={self.user_id})"
