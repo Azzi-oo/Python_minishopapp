@@ -8,6 +8,7 @@ from sqlalchemy.orm import relationship
 
 if TYPE_CHECKING:
     from .post import Post
+    from .profile import Profile
 
 
 class User(Base):
@@ -17,3 +18,4 @@ class User(Base):
     username: Mapped[str] = mapped_column(unique=True)
 
     posts: Mapped["Post"] = relationship(back_populates="posts")
+    profile: Mapped["Profile"] = relationship(back_populates="users")
